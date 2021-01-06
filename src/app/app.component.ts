@@ -72,26 +72,26 @@ export class AppComponent implements OnInit {
   {
    //let d=  this.QuickSort([67,3,45,12,1,97,4]);
    this.checked=!checked;
-  // this.QuickSort(this.clonePageData,property,checked);--quick sort is taking much time
+   this.QuickSort(this.clonePageData,property,checked);//--quick sort is taking much time
 
-    if(this.checked)
-    this.clonePageData.sort((x,y)=> {
-      if(x[property] > y[property])
-      return 1
-      else if(x[property] < y[property])
-      return -1
-      else
-      return 0
-     });
-    else
-    this.clonePageData.sort((x,y)=> {
-       if(x[property] < y[property])
-       return 1
-       else if(x[property] > y[property])
-       return -1
-       else
-       return 0
-      });
+    // if(this.checked)
+    // this.clonePageData.sort((x,y)=> {
+    //   if(x[property] > y[property])
+    //   return 1
+    //   else if(x[property] < y[property])
+    //   return -1
+    //   else
+    //   return 0
+    //  });
+    // else
+    // this.clonePageData.sort((x,y)=> {
+    //    if(x[property] < y[property])
+    //    return 1
+    //    else if(x[property] > y[property])
+    //    return -1
+    //    else
+    //    return 0
+    //   });
   }
   GetData():Observable<countriesData[]>
   {
