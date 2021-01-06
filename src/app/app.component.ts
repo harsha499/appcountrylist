@@ -39,13 +39,13 @@ export class AppComponent implements OnInit {
   filteredData(val='')
   {
 
-    this.PageData=this.clonePageData||this.PageData;
+    this.clonePageData=this.clonePageData||this.PageData;
     if(!val)
     this.getAllCounties();
     else if(val=="name")
     {
       this.clonePageData= this.PageData.filter((y)=>{
-        return  y["name"].toLowerCase().indexOf(this.nameInput.toLowerCase())>-1;
+        return  y["name"].toLowerCase()==this.nameInput.toLowerCase();
       })
     }
     else if(val=="population")
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
     else if(val=="currency")
     {
       this.clonePageData= this.PageData.filter((y)=>{
-        return y["currencies"] ?y["currencies"].toLowerCase().indexOf(this.currencyInput.toLowerCase())>-1:false;
+        return y["currencies"] ?y["currencies"].toLowerCase()==this.currencyInput.toLowerCase():false;
       })
     }
     else if(val=="area")
@@ -70,7 +70,10 @@ export class AppComponent implements OnInit {
 
   sortData(property,checked)
   {
-    this.checked=!checked;
+   //let d=  this.QuickSort([67,3,45,12,1,97,4]);
+   this.checked=!checked;
+  // this.QuickSort(this.clonePageData,property,checked);--quick sort is taking much time
+
     if(this.checked)
     this.clonePageData.sort((x,y)=> {
       if(x[property] > y[property])
@@ -106,4 +109,46 @@ export class AppComponent implements OnInit {
     }
     return CountryData;
   }
+  QuickSort(arr,prop,checked,start=0,end=arr.length)
+  {
+    if(start<end)
+    {
+     let count:number= this.sortingvalues(arr,prop,checked,start,end);
+     this.QuickSort(arr,prop,checked,start,count-1);
+     this.QuickSort(arr,prop,checked,count+1,end);
+    }
+    return arr;
+  }
+  sortingvalues(arr,prop,checked,start,end)
+  {
+    let first=arr[start];
+    let count=start;
+    for(let i=start+1;i<=end-1;i++)
+    {
+      console.log(arr[i])
+      if(i==end)
+      {
+        debugger;
+      }
+      if(checked && arr[i][prop]<first[prop])
+      {
+        count++;
+        this.swap(arr,i,count);
+      }
+      if(!checked && arr[i][prop]>first[prop])
+      {
+        count++;
+        this.swap(arr,i,count);
+      }
+    }
+    this.swap(arr,count,start);
+    return count;
+  }
+  swap(arr,a,b)
+  {
+    let temp=arr[a];
+    arr[a]=arr[b];
+    arr[b]=temp;
+  }
+
 }
