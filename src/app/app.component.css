@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+}
+th {
+  background: grey;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+.tableFixHead {
+  overflow-y: auto;
+  height: 400px;
+  width: 1000px;
+  margin: 10%;
+}
+td{
+  width: 300px;
+  text-align: center;
+}
