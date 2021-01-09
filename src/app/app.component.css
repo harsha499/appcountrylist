@@ -41,6 +41,7 @@ body{
   background-image: url(../assets/tree-736885__340.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
 }
 .tableFixHead {
   overflow-y: auto;
@@ -49,6 +50,12 @@ body{
   margin: 10%;
   color:#ffe7e7;
 
+}
+html,body
+{
+  min-width: 100%;
+  min-height: 100%;
+  margin:0% ;
 }
 td{
   width: 300px;
