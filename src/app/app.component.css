@@ -1,19 +1,87 @@
 table {
   border-collapse: collapse;
+  display: table;
+
+}
+h1{
+  transition: transform .4s linear 0s;
 }
 th {
   background: grey;
   position: sticky;
   top: 0;
   cursor: pointer;
+  background: #ed0f5791;
+
+}
+tr{
+  transition: transform .4s linear 0s;
+}
+.tableFixHead::-webkit-scrollbar {
+  width: 12px;
+}
+@keyframes anmin
+{
+  0% {transform:translateX(-100%);transform:translateX(-100%)}
+  80%{transform:translateX(10%);transform:translateX(5%)}
+  100%{transform:translate(0);transform:translat0(0)}
+}
+.tableFixHead::-webkit-scrollbar-thumb {
+  background-color: #ff7070;
+  border-radius: 20px;
+}
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input:focus,button:focus
+{
+outline: none;
+}
+body{
+  background-image: url(../assets/tree-736885__340.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .tableFixHead {
   overflow-y: auto;
   height: 400px;
   width: 1000px;
   margin: 10%;
+  color:#ffe7e7;
+
 }
 td{
   width: 300px;
   text-align: center;
+}
+input[type="text"],input[type="number"]
+{
+  border-radius: 20px;
+  background-color: #8080805e;
+  animation: anmin 1s linear 0s;
+  transition: transform .4s linear 0s;
+}
+button
+{
+  border-radius: 7px 7px;
+  /* background-image: linear-gradient(45deg, #12f3f3bd, #c37cfade); */
+  color:#85a79e;
+  background-color: #80808061;
+  transition: transform .4s linear 0s;
+}
+button:hover:enabled
+{
+transform: scale(1.1,1.1);
+}
+input:focus
+{
+transform: scale(1.1,1.1);
+}
+h1:hover
+{
+  transform: scale(1.1,1.1);
+}
+tr:hover
+{
+  transform: scale(1.1,1.1);
 }

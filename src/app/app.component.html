@@ -1,25 +1,29 @@
 
-<h1 style="text-align: center;">All Country List!</h1>
+<h1 style="text-align: center;color: #ffaad1ad;">All Country List!</h1>
 
-<div style="text-align: center"><span id="Name">
-  <input [(ngModel)]="nameInput" type="text" name="input" placeholder="Enter Name"/>&nbsp;
-  <button [disabled]="!nameInput" type="submit" (click)="filteredData('name')">Get Name</button>
-</span>&nbsp; &nbsp;&nbsp;
-<span  id="Population">
-  <input [(ngModel)]="populationInput" type="number" name="input" placeholder="Enter Population"/>&nbsp;
-  <button [disabled]="!populationInput" type="submit" (click)="filteredData('population')">Get Population</button>
-</span>&nbsp; &nbsp;&nbsp;
-<span  id="Area">
-  <input [(ngModel)]="areaInput" type="number" name="area" placeholder="Enter Area"/>&nbsp;
-  <button [disabled]="!areaInput" type="submit" (click)="filteredData('area')">Get Area</button>
-</span>&nbsp; &nbsp;&nbsp;
-<span  id="Currency">
-  <input [(ngModel)]="currencyInput" type="text" name="input" placeholder="Enter Currency"/>&nbsp;
-  <button [disabled]="!currencyInput" type="submit" (click)="filteredData('currency')">Get Currency</button>
-</span>
+<div style="display: flex;flex-direction: row;justify-content: space-around;flex-wrap: wrap;">
+  <div id="Name">
+    <input [(ngModel)]="nameInput" type="text" name="input" placeholder="Enter Name"/>&nbsp;
+    <button [disabled]="!nameInput" type="submit" (click)="filteredData('name')">Get Name</button>
+  </div>
+
+  <div  id="Population">
+    <input [(ngModel)]="populationInput" type="number" name="input" placeholder="Enter Population"/>&nbsp;
+    <button [disabled]="!populationInput" type="submit" (click)="filteredData('population')">Get Population</button>
+  </div>
+
+  <div  id="Area">
+    <input [(ngModel)]="areaInput" type="number" name="area" placeholder="Enter Area"/>&nbsp;
+    <button [disabled]="!areaInput" type="submit" (click)="filteredData('area')">Get Area</button>
+  </div>
+
+  <div  id="Currency">
+    <input [(ngModel)]="currencyInput" type="text" name="input" placeholder="Enter Currency"/>&nbsp;
+    <button [disabled]="!currencyInput" type="submit" (click)="filteredData('currency')">Get Currency</button>
+  </div>
 </div>
 <br/>
-<div style="text-align: center;;">
+<div style="display: flex;flex-direction: row;justify-content:center;">
   <span  id="Countries">
     <button type="submit" (click)="getAllCounties()">Get All Countires</button>
   </span>
