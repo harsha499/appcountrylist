@@ -26,6 +26,12 @@ tr{
   80%{transform:translateX(10%);transform:translateX(5%)}
   100%{transform:translate(0);transform:translat0(0)}
 }
+@keyframes tableamin
+{
+  0% {transform:translateX(100%);transform:translateX(100%)}
+  80%{transform:translateX(10%);transform:translateX(5%)}
+  100%{transform:translate(0);transform:translat0(0)}
+}
 .tableFixHead::-webkit-scrollbar-thumb {
   background-color: #ff7070;
   border-radius: 20px;
@@ -49,6 +55,7 @@ body{
   width: 1000px;
   margin: 10%;
   color:#ffe7e7;
+  animation: tableamin 1s linear 0s;
 
 }
 html,body
@@ -92,3 +99,4 @@ tr:hover
 {
   transform: scale(1.1,1.1);
 }
+
