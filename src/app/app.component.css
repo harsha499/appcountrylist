@@ -14,7 +14,7 @@ th {
   background: #ed0f5791;
 
 }
-tr{
+tr:not(first-child){
   transition: transform .4s linear 0s;
 }
 .tableFixHead::-webkit-scrollbar {
